@@ -8,7 +8,7 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 const navigation = [
   { name: 'Dashboard', href: 'dashboard/', current: true },
   { name: 'Productos', href: '/dashboard/products/', current: false },
-/*   { name: 'Ventas', href: '#', current: false }, */
+  { name: 'Tienda ShopSale', href: 'https://yardsaleshop.netlify.app/', current: false },
 ];
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
