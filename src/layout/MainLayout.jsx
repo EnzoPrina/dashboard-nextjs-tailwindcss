@@ -4,7 +4,7 @@ import Nav from "@common/Nav"
 export default function MainLayout({ children }) {
     return (
        <>
-        <div className="min-h-full">
+        <div className="min-h-screen bg-gray-900">
             <Header />
             <Nav />
             <main>

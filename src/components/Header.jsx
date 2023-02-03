@@ -6,9 +6,9 @@ import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline';
 
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
+  { name: 'Dashboard', href: 'dashboard/', current: true },
   { name: 'Productos', href: '/dashboard/products/', current: false },
-  { name: 'Ventas', href: '#', current: false },
+/*   { name: 'Ventas', href: '#', current: false }, */
 ];
 const userNavigation = [
   { name: 'Your Profile', href: '#' },

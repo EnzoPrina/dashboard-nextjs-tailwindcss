@@ -5,7 +5,7 @@ import { useAuth } from '@hooks/useAuth';
 import ModalLoginError from '@common/ModalLoginError';
 
 
-export default function LoginPage() {
+export default function SignUp() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const auth = useAuth();
@@ -31,9 +31,9 @@ export default function LoginPage() {
         <div className="max-w-md w-full space-y-8">
           <div>
             <img className="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow" />
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-white">Sign in to your account</h2>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-white">I want to register</h2>
           </div>
-          <form className="mt-8 space-y-6" onSubmit={submitHanlder}>
+          <form className="mt-8 space-y-6" /* onSubmit={submitHanlder} */>
             <input type="hidden" name="remember" defaultValue="true" />
             <div className="rounded-md shadow-sm -space-y-px">
               <div>
@@ -48,7 +48,7 @@ export default function LoginPage() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
-                  ref={emailRef}
+                  /* ref={emailRef} */
                 />
               </div>
               <div>
@@ -63,7 +63,7 @@ export default function LoginPage() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
-                  ref={passwordRef}
+                  /* ref={passwordRef} */
                 />
               </div>
             </div>
@@ -93,9 +93,9 @@ export default function LoginPage() {
                 </span>
                 Sign in
               </button>
-              {auth.error ? 
+{/*               {auth.error ? 
               <div className='text-left p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg dark:bg-red-200
-              dark:text-red-800' role="alert"> {auth.error} &nbsp; &nbsp; <ModalLoginError/></div> : null}
+              dark:text-red-800' role="alert"> {auth.error} &nbsp; &nbsp; <ModalLoginError/></div> : null} */}
 
             </div>
           </form>

@@ -20,32 +20,30 @@ export default function FormProduct({ setOpen, setAlert, product }) {
       images: [formData.get('images').name], //Array que contiene string
     };
 
-    if(product) {
+    if (product) {
       updateProduct(product.id, data).then(() => {
         router.push('/dashboard/products/');
       });
     } else {
       addProduct(data)
-      .then(() => {
-        setAlert({
-          active: true, //Muestra el alert
-          message: 'Product added successfully',
-          type: 'success',
-          autoClose: false,
+        .then(() => {
+          setAlert({
+            active: true, //Muestra el alert
+            message: 'Product added successfully',
+            type: 'success',
+            autoClose: false,
+          });
+          setOpen(false); //Cierra el modal
+        })
+        .catch((error) => {
+          setAlert({
+            active: true,
+            message: error.message, //Cuando hay error muestra el mensaje del error
+            type: 'error',
+            autoClose: false,
+          });
         });
-        setOpen(false); //Cierra el modal
-      })
-      .catch((error) => {
-        setAlert({
-          active: true,
-          message: error.message, //Cuando hay error muestra el mensaje del error
-          type: 'error',
-          autoClose: false,
-        });
-      });
     }
-
-
 
     //console.log(data); //Imprime los datos ingresados
     //Llamada a ValidationSchema.js
@@ -70,19 +68,31 @@ export default function FormProduct({ setOpen, setAlert, product }) {
               <label htmlFor="title" className="block text-sm font-medium text-gray-700">
                 Title
               </label>
-              <input defaultValue={product?.title}  type="text" name="title" id="title" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+              <input
+                defaultValue={product?.title}
+                type="text"
+                name="title"
+                id="title"
+                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
             </div>
             <div className="col-span-6 sm:col-span-3">
-              <label htmlFor="price" className="block text-sm font-medium text-gray-700">
+              <label htmlFor="price" className="block text-sm font-medium text-gray-700 border-gray-300 rounded">
                 Price
               </label>
-              <input defaultValue={product?.price} type="number" name="price" id="price" className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md" />
+              <input
+                defaultValue={product?.price}
+                type="number"
+                name="price"
+                id="price"
+                className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md"
+              />
             </div>
             <div className="col-span-6">
               <label htmlFor="category" className="block text-sm font-medium text-gray-700">
                 Category
               </label>
-              <select 
+              <select
                 id="category"
                 name="category"
                 defaultValue={product?.category}
